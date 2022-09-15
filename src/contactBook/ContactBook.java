@@ -65,6 +65,16 @@ public class ContactBook {
 
     public String getName(Integer phone){return contacts[searchIndexByPhone(phone)].getName();}
 
+    public boolean equalPhones() {
+        for(int i=0; i<getNumberOfContacts()-1; i++){
+            for(int j=i+1; j<getNumberOfContacts();j++){
+                if(contacts[i].getPhone() == contacts[j].getPhone()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     private int searchIndexByPhone(Integer phone) {
         int i = 0;
